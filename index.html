@@ -2,55 +2,89 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Test Page</title>
+    <title>We'll Be Back Soon</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #ffffff;
             text-align: center;
-            padding: 50px;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
         }
 
         h1 {
-            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: #007BFF;
-            color: white;
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
         }
 
-        button:hover {
-            background-color: #0056b3;
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(255,255,255,0.3);
+            border-top: 6px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 30px;
         }
 
-        #message {
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .footer {
+            font-size: 0.9rem;
+            opacity: 0.8;
             margin-top: 20px;
-            font-weight: bold;
-            color: green;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 500px) {
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>Simple Test Page</h1>
-    <p>This is a basic HTML test page.</p>
+    <div class="container">
+        <div class="loader"></div>
+        <h1>We'll Be Back Soon</h1>
+        <p>
+            Our website is currently undergoing scheduled maintenance.
+            We should be back shortly. Thank you for your patience.
+        </p>
 
-    <button onclick="showMessage()">Click Me</button>
-
-    <div id="message"></div>
-
-    <script>
-        function showMessage() {
-            document.getElementById("message").innerText = "Button clicked successfully!";
-        }
-    </script>
+    </div>
 
 </body>
 </html>
